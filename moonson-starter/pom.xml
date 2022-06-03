@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>moonson-parent</artifactId>
+        <groupId>com.jf.moonson</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../moonson-parent</relativePath>
+    </parent>
+    <groupId>com.jf.moonson.starter</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>moonson-starter</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+<!--        <module>moo-crypt-starter</module>-->
+<!--        <module>moo-dingtalk-starter</module>-->
+<!--        <module>moo-nacos-starter</module>-->
+<!--        <module>moo-oss-starter</module>-->
+<!--        <module>moo-rocketmq-starter</module>-->
+<!--        <module>moo-alipay-starter</module>-->
+        <module>moonson-starter-feign</module>
+        <module>moonson-starter-elasticsearch</module>
+        <module>moonson-starter-redis</module>
+        <module>moonson-starter-web</module>
+        <module>moonson-starter-db</module>
+    </modules>
+</project>

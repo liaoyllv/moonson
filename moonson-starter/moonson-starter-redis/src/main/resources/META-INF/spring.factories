@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.jf.moonson.starter.redis.cache.RedisCacheAutoConfiguration,\
+com.jf.moonson.starter.redis.clusterseq.ClusterSeqAutoConfiguration,\
+com.jf.moonson.starter.redis.JedisAutoConfiguration
