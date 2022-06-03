@@ -4,6 +4,27 @@ server:
 spring:
   application:
     name: moonson-business-user
+  cache:
+    type: redis
+    redis:
+      cache-null-values: true
+      # 以时间单位结尾：H、M、S
+      time-to-live: 600S
+      key-prefix: "spring:cache:"
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8   #或UT
+  session:
+    store-type: REDIS
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 10MB
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     moonson:
@@ -58,12 +79,27 @@ spring:
 logging:
   level:
     root: info
+    com.jf.moonson: debug
 
 feign:
+  httpclient:
+    enabled: true
+  okhttp:
+    enabled: false
+    # 请求与响应的压缩以提高通信效率
+  compression:
+    request:
+      enabled: true
+      min-request-size: 2048
+      mime-types: text/xml,application/xml,application/json,image/jpeg
+    response:
+      enabled: true
   client:
     config:
       default:
-        logger-level: headers # 将每一次 openFeign 请求的头信息在日志输出
+        connectTimeout: 3000
+        readTimeout: 10000
+        logger-level: full # 完整信息
 
 management:
   endpoints:

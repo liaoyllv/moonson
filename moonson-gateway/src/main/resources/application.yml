@@ -1,16 +1,36 @@
-gateway: #让gateway通过nacos实现自动路由转发
-  discovery:
-    locator:
-      enabled: false
-  routes:  #路由规则配置
-    - id: article_service_route
-      #gateway自动从nacos获取article-service可用节点进行转发
-      #默认会将所有Gateway URI转发到article-service上
-      uri: lb://article-service
-      predicates:
-        - Path=/as/** #:9000/as/list -> :8100/as/list
-        #2020年10月15日微服务上线,该接口才能对外暴露
-        - After=2022-10-05T00:00:00.000+08:00[Asia/Shanghai]
-      filters:
-        - StripPrefix=1 #忽略掉第一层前缀进行转发 :9000/as/list->:8100/list
-        - AddResponseHeader=X-Response-Red,Blue
+server:
+  port: 8085
+  servlet:
+    context-path: /moonson/api
+
+spring:
+  application:
+    name: moonson-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.35.88.207:8848
+        username: nacos
+        password: nacos
+    gateway: #让gateway通过nacos实现自动路由转发
+      discovery:
+        locator:
+          enabled: false
+      routes:  #路由规则配置
+        - id: moonson_business_user_route
+          #gateway自动从nacos获取article-service可用节点进行转发
+          #默认会将所有Gateway URI转发到article-service上
+          uri: lb://moonson-business-user
+          predicates:
+            - Path=${server.servlet.context-path}/u/** #:9000/as/list -> :8100/as/list
+          filters:
+            - StripPrefix=3 #忽略掉第一层前缀进行转发 :9000/as/list->:8100/list
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    root: info
