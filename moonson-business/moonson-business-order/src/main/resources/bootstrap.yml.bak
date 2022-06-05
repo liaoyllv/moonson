@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: moonson-business-order
+  cloud:
+    nacos:
+      config:
+        server-addr: 101.35.88.207:8848
+        username: nacos
+        password: nacos
+        file-extension: yml

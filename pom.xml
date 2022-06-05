@@ -14,6 +14,7 @@
         <module>moonson-parent</module>
         <module>moonson-common</module>
         <module>moonson-starter</module>
+        <module>moonson-auth</module>
         <module>moonson-business</module>
         <module>moonson-gateway</module>
     </modules>

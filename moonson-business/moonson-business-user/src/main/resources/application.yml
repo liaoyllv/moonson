@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 9001
 
 spring:
   application:
@@ -28,7 +28,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     moonson:
-#      # 使用阿里的Druid连接池
+      # 使用阿里的Druid连接池
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://101.35.88.207:3306/moonson?useUnicode=true&allowMultiQueries=true&characterEncoding=utf8&useAffectedRows=true&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
       username: root

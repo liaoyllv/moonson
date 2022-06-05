@@ -1,5 +1,7 @@
 package com.jf.moonson.starter.db;
 
+import com.alibaba.druid.proxy.jdbc.DataSourceProxy;
+import com.alibaba.druid.proxy.jdbc.DataSourceProxyImpl;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +28,7 @@ import javax.sql.DataSource;
  */
 @Slf4j
 // 防止无法解析
-@AutoConfigureBefore({DataSourceAutoConfiguration.class, DruidDataSourceAutoConfigure.class})
+// @AutoConfigureBefore({DataSourceAutoConfiguration.class, DruidDataSourceAutoConfigure.class})
 @Configuration
 public class MoonsonDataSourceAutoConfiguration {
 
@@ -36,7 +38,6 @@ public class MoonsonDataSourceAutoConfiguration {
 
     @Bean(name = "moonsonDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.moonson")
-    @Primary
     public DataSource moonsonDataSource() {
         return DruidDataSourceBuilder.create().build();
     }
@@ -48,7 +49,7 @@ public class MoonsonDataSourceAutoConfiguration {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(
-                new PathMatchingResourcePatternResolver().getResources("classpath*:mybatis/moonson/**/*.xml"));
+                new PathMatchingResourcePatternResolver().getResources("classpath*:mybatis/mapper/**/*.xml"));
         return bean.getObject();
     }
 

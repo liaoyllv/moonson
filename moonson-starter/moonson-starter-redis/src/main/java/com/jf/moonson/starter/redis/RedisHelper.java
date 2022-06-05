@@ -25,20 +25,21 @@ public class RedisHelper {
      * keys命令替代方案
      */
     public Set<String> keys(String key) {
-        return redisTemplate.execute((RedisCallback<Set<String>>)connection -> {
-            Set<String> keys = new HashSet<>();
-            Cursor<byte[]> cursor = connection
-                    .scan(new ScanOptions.ScanOptionsBuilder().match(key).count(1000).build());
-            while (cursor.hasNext()) {
-                keys.add(new String(cursor.next()));
-            }
-            try {
-                cursor.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-                log.error("redis cursor close exception, cause:{}, message:{}", e.getCause(), e.getMessage());
-            }
-            return keys;
-        });
+        // return redisTemplate.execute((RedisCallback<Set<String>>)connection -> {
+        //     Set<String> keys = new HashSet<>();
+        //     Cursor<byte[]> cursor = connection
+        //             .scan(new ScanOptions.ScanOptionsBuilder().match(key).count(1000).build());
+        //     while (cursor.hasNext()) {
+        //         keys.add(new String(cursor.next()));
+        //     }
+        //     try {
+        //         cursor.close();
+        //     } catch (IOException e) {
+        //         e.printStackTrace();
+        //         log.error("redis cursor close exception, cause:{}, message:{}", e.getCause(), e.getMessage());
+        //     }
+        //     return keys;
+        // });
+        return new HashSet<>();
     }
 }

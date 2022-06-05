@@ -52,7 +52,7 @@ public class R<T> {
     }
 
     public static <T> R<T> ok(T o) {
-        R<T> r = new R();
+        R<T> r = new R<>();
         r.setData(o);
         return r;
     }

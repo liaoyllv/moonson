@@ -41,7 +41,7 @@
             <!--<property name="trimStrings" value="true"/>-->
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources/mybatis/moonson">
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources/mybatis">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 

@@ -45,18 +45,18 @@ public class JedisAutoConfiguration {
         log.info("Initializing JedisAutoConfiguration");
     }
 
-    @Bean("sessionRedisProperties")
-    @ConfigurationProperties(prefix = "spring.dsb-session-redis")
-    public RedisProperties sessionRedisProperties() {
-        return createRedisProperties();
-    }
-
-    @SpringSessionRedisConnectionFactory
-    @Bean
-    public JedisConnectionFactory sessionConnectionFactory(
-            @Qualifier("sessionRedisProperties") RedisProperties properties) {
-        return createJedisConnectionFactory(properties);
-    }
+    // @Bean("sessionRedisProperties")
+    // @ConfigurationProperties(prefix = "spring.session-redis")
+    // public RedisProperties sessionRedisProperties() {
+    //     return createRedisProperties();
+    // }
+    //
+    // @SpringSessionRedisConnectionFactory
+    // @Bean
+    // public JedisConnectionFactory sessionConnectionFactory(
+    //         @Qualifier("sessionRedisProperties") RedisProperties properties) {
+    //     return createJedisConnectionFactory(properties);
+    // }
 
     /****************************************************************************************************************/
 

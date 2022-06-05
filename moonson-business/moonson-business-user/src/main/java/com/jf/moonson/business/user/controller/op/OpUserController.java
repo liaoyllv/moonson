@@ -1,4 +1,4 @@
-package com.jf.moonson.business.user;
+package com.jf.moonson.business.user.controller.op;
 
 import com.jf.moonson.business.user.repo.entity.SysUser;
 import com.jf.moonson.business.user.service.UserService;

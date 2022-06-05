@@ -13,14 +13,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.12</lombok.version>
 
-        <spring.boot.version>2.2.6.RELEASE</spring.boot.version>
-        <spring.cloud.alibaba.version>2.2.5.RELEASE</spring.cloud.alibaba.version>
-        <spring.cloud.version>Hoxton.SR3</spring.cloud.version>
-
-        <jackson.version.annotations>2.10.3</jackson.version.annotations>
-        <jackson.version.core>2.10.3</jackson.version.core>
-        <jackson.version.databind>2.10.3</jackson.version.databind>
-        <jackson.version.datatype>2.10.3</jackson.version.datatype>
+        <spring.boot.version>2.6.3</spring.boot.version>
+        <spring.cloud.alibaba.version>2021.0.1.0</spring.cloud.alibaba.version>
+        <spring.cloud.version>2021.0.1</spring.cloud.version>
 
         <apache.commons.lang3.version>3.9</apache.commons.lang3.version>
         <apache.commons.collection.version>4.4</apache.commons.collection.version>
@@ -35,14 +30,16 @@
         <io.swagger.version>1.6.6</io.swagger.version>
         <swagger.knife4j.version>3.0.2</swagger.knife4j.version>
 
+        <jackson.version>2.13.3</jackson.version>
         <elasticsearch.version>7.15.0</elasticsearch.version>
         <guava.version>28.0-jre</guava.version>
         <easyexcel.version>2.2.3</easyexcel.version>
         <hutool.version>5.3.8</hutool.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <auth-jwt.version>3.10.3</auth-jwt.version>
-        <redisson.version>3.15.5</redisson.version>
+        <redisson.version>3.17.3</redisson.version>
         <shedlock.version>4.7.1</shedlock.version>
+        <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
     </properties>
 
 
@@ -60,22 +57,24 @@
                 <artifactId>moonson-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.jf.moonson.starter</groupId>
                 <artifactId>moonson-starter-elasticsearch</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.jf.moonson.starter</groupId>
                 <artifactId>moonson-starter-db</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.jf.moonson.starter</groupId>
                 <artifactId>moonson-starter-feign</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jf.moonson.starter</groupId>
+                <artifactId>moonson-starter-redis</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -164,22 +163,22 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version.annotations}</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>${jackson.version.core}</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version.databind}</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jsr310</artifactId>
-                <version>${jackson.version.datatype}</version>
+                <version>${jackson.version}</version>
             </dependency>
 
             <!-- guava -->
@@ -299,6 +298,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>easyexcel</artifactId>
                 <version>${easyexcel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${nimbus-jose-jwt.version}</version>
             </dependency>
 
         </dependencies>

@@ -15,11 +15,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.jf.moonson</groupId>
-            <artifactId>moonson-common</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.jf.moonson.starter</groupId>
             <artifactId>moonson-starter-db</artifactId>
         </dependency>

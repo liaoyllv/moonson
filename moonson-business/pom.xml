@@ -17,5 +17,7 @@
     <modules>
         <module>moonson-business-user</module>
         <module>moonson-business-order</module>
+        <module>moonson-business-account</module>
+        <module>moonson-business-storage</module>
     </modules>
 </project>
