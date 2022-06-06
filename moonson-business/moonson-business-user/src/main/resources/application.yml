@@ -101,6 +101,13 @@ feign:
         readTimeout: 10000
         logger-level: full # 完整信息
 
+## elasticsearch
+es:
+  username: elastic
+  password: 8RWTLqfPPrjXnTWoplWylldOS_K9u
+  hosts:
+    - 101.35.88.207:9200/
+
 management:
   endpoints:
     web:
