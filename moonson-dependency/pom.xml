@@ -27,7 +27,7 @@
         <pagehelper.spring.boot.starter.version>1.2.12</pagehelper.spring.boot.starter.version>
 
         <springfox.swagger2.version>3.0.0</springfox.swagger2.version>
-        <io.swagger.version>1.6.6</io.swagger.version>
+        <io.swagger.version>1.6.0</io.swagger.version>
         <swagger.knife4j.version>3.0.2</swagger.knife4j.version>
 
         <jackson.version>2.13.3</jackson.version>
@@ -37,7 +37,7 @@
         <hutool.version>5.3.8</hutool.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <auth-jwt.version>3.10.3</auth-jwt.version>
-        <redisson.version>3.17.3</redisson.version>
+        <redisson.version>3.15.1</redisson.version>
         <shedlock.version>4.7.1</shedlock.version>
         <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
     </properties>

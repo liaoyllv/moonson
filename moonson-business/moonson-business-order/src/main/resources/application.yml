@@ -70,6 +70,7 @@ spring:
 #            username: nacos
 #            password: nacos
 
+
 seata:
   registry:
     type: nacos
@@ -116,6 +117,13 @@ feign:
         connectTimeout: 3000
         readTimeout: 10000
         logger-level: full # 完整信息
+
+## elasticsearch
+es:
+  hosts:
+    - 101.35.88.207:9200
+
+
 
 management:
   endpoints:

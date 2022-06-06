@@ -23,6 +23,7 @@
 <!--        <module>moo-alipay-starter</module>-->
         <module>moonson-starter-feign</module>
         <module>moonson-starter-elasticsearch</module>
+        <module>moonson-starter-rocketmq</module>
         <module>moonson-starter-redis</module>
         <module>moonson-starter-web</module>
         <module>moonson-starter-db</module>
