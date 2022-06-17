@@ -16,11 +16,6 @@ spring:
     time-zone: GMT+8   #或UT
   session:
     store-type: REDIS
-  http:
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
   servlet:
     multipart:
       max-request-size: 100MB
@@ -53,6 +48,10 @@ spring:
         poolPreparedStatements: true
         maxPoolPreparedStatementPerConnectionSize: 20
   cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server:
     nacos:
 #      config:
 #        server-addr: 101.35.88.207:8848
@@ -107,6 +106,7 @@ es:
   password: 8RWTLqfPPrjXnTWoplWylldOS_K9u
   hosts:
     - 101.35.88.207:9200
+
 
 management:
   endpoints:
