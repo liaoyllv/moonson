@@ -40,6 +40,7 @@
         <redisson.version>3.15.1</redisson.version>
         <shedlock.version>4.7.1</shedlock.version>
         <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
+        <canal.version>1.1.4</canal.version>
     </properties>
 
 
@@ -295,6 +296,12 @@
                 <groupId>com.nimbusds</groupId>
                 <artifactId>nimbus-jose-jwt</artifactId>
                 <version>${nimbus-jose-jwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.otter</groupId>
+                <artifactId>canal.client</artifactId>
+                <version>${canal.version}</version>
             </dependency>
 
         </dependencies>

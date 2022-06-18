@@ -30,9 +30,9 @@ spring:
     moonson:
       # 使用阿里的Druid连接池
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://101.35.88.207:3306/moonson?useUnicode=true&allowMultiQueries=true&characterEncoding=utf8&useAffectedRows=true&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+      url: jdbc:mysql://localhost:3306/moonson_user?useUnicode=true&allowMultiQueries=true&characterEncoding=utf8&useAffectedRows=true&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
       username: root
-      password: 123456
+      password: Tracy109233
       druid:
         # 连接池的配置信息
         # 初始化大小，最小，最大
@@ -103,8 +103,6 @@ feign:
 
 ## elasticsearch
 es:
-  username: elastic
-  password: 8RWTLqfPPrjXnTWoplWylldOS_K9u
   hosts:
     - 101.35.88.207:9200
 
