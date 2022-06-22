@@ -51,7 +51,7 @@ spring:
     stream:
       rocketmq:
         binder:
-          name-server:
+          name-server: 101.35.88.207:9876
     nacos:
 #      config:
 #        server-addr: 101.35.88.207:8848
@@ -73,7 +73,6 @@ spring:
 #            rule-type: flow
 #            username: nacos
 #            password: nacos
-
 
 logging:
   level:

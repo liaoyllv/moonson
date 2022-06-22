@@ -41,6 +41,7 @@
         <shedlock.version>4.7.1</shedlock.version>
         <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
         <rocketmq.version>4.9.3</rocketmq.version>
+        <rocketmq.starter.version>2.1.1</rocketmq.starter.version>
         <canal.version>1.1.4</canal.version>
     </properties>
 
@@ -304,6 +305,11 @@
                 <version>${nimbus-jose-jwt.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq.starter.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
