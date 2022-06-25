@@ -13,6 +13,10 @@ public interface RocketMQConstant {
          * 订单topic
          */
         String ORDER = "MOONSON_TOPIC_ORDER";
+        /**
+         * 订单topic
+         */
+        String DEFAULT = "MOONSON_TOPIC_DEFAULT";
 
     }
 
@@ -41,6 +45,11 @@ public interface RocketMQConstant {
          * 取消订单
          */
         String ORDER_CANCEL = "MOONSON_ORDER_CANCEL";
+
+        /**
+         * uv
+         */
+        String MOONSON_USER_VIEW = "MOONSON_USER_VIEW";
 
     }
 
