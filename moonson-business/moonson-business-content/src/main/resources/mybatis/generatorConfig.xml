@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <context id="mysqlTables" targetRuntime="MyBatis3">
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="com.jf.moonson.starter.db.mybatis.plugin.LombokPlugin">
+            <property name="superBuilder" value="true"/>
+            <property name="superBuilder.toBuilder" value="true"/>
+            <property name="allArgsConstructor" value="true"/>
+        </plugin>
+
+        <commentGenerator>
+            <property name="addRemarkComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://101.35.88.207:3306/moonson?useUnicode=true&amp;allowMultiQueries=true&amp;characterEncoding=utf8&amp;useAffectedRows=true"
+                        userId="root" password="123456">
+            <property name="useInformationSchema" value="false"/>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.jf.moonson.business.user.repo.entity"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <!--<property name="trimStrings" value="true"/>-->
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources/mybatis">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.jf.moonson.business.user.repo.mapper"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="sys_user" domainObjectName="SysUser">
+            <generatedKey column="ID" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="GENDER"
+                            javaType="com.jf.moonson.common.enums.GenderEnum"
+                            typeHandler="com.jf.moonson.starter.db.mybatis.type.CodeEnumTypeHandler"/>
+            <columnOverride column="STATUS"
+                            javaType="com.jf.moonson.common.enums.BooleanEnum"
+                            typeHandler="com.jf.moonson.starter.db.mybatis.type.CodeEnumTypeHandler"/>
+            <columnOverride column="IS_DELETED"
+                            javaType="com.jf.moonson.common.enums.BooleanEnum"
+                            typeHandler="com.jf.moonson.starter.db.mybatis.type.CodeEnumTypeHandler"/>
+        </table>
+        <table tableName="sys_role" domainObjectName="SysRole">
+            <generatedKey column="ID" sqlStatement="mysql" identity="true"/>
+            <columnOverride column="IS_DELETED"
+                            javaType="com.jf.moonson.common.enums.BooleanEnum"
+                            typeHandler="com.jf.moonson.starter.db.mybatis.type.CodeEnumTypeHandler"/>
+        </table>
+    </context>
+</generatorConfiguration>
